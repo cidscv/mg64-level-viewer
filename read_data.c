@@ -52,6 +52,7 @@ int generate_vtx(FILE *rom, int level_index)
 
 int generate_dtx(FILE *rom)
 {
+    // Incomplete
     long dtx_start = STARTING_OFFSET + VTX_LENGTH;
 
     printf("%lX\n", dtx_start);
@@ -61,7 +62,7 @@ int generate_dtx(FILE *rom)
     unsigned char *dtx_buffer = malloc(DTX_LENGTH);
     size_t bytes_read = fread(dtx_buffer, 1, DTX_LENGTH, rom);
 
-    // Write to .vtx file
+    // Write to .dtx file
     FILE *dtx_file = fopen("course_data/hole1.dtx", "wb");
     fwrite(dtx_buffer, 1, bytes_read, dtx_file);
     fclose(dtx_file);
