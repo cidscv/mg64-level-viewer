@@ -141,6 +141,8 @@ int read_vtx_file(FILE *vtx_file)
 
     decode_vtx(vtx_file_buffer, file_size);
 
+    free(vtx_file_buffer);
+
     return 0;
 }
 
